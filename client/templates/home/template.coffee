@@ -51,4 +51,5 @@ Template.home.viewmodel
 		timeline.setOptions {
 			orientation: 'top'
 			stack: false
+			height: '500px'
 		}
