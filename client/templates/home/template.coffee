@@ -30,7 +30,7 @@ Template.home.viewmodel
 			content: do faker.lorem.word
 		}
 
-		items = _.times 20, (n) -> {
+		items = _.times 10, (n) -> {
 			id: n + 1
 			group: (_.sample groups).id
 			content: """
@@ -40,7 +40,7 @@ Template.home.viewmodel
 				</span>
 				<div style='position: relative;'>#{faker.lorem.word()}</div>
 			"""
-			start: moment(new Date faker.date.recent(365)).format 'YYYY-MM-DD'
+			start: moment(new Date faker.date.recent(31)).format 'YYYY-MM-DD'
 			type: _.sample ['box']
 		}
 
@@ -53,3 +53,12 @@ Template.home.viewmodel
 			stack: false
 			height: '500px'
 		}
+
+		Meteor.setTimeout ->
+
+			($ '.vis-item').on 'mouseenter', (e) ->
+				($ @).toggleClass 'animated infinite bounce'
+
+
+
+		, 3000
